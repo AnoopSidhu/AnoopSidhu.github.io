@@ -1,0 +1,12 @@
+body {
+    background-color: white;
+      font-family:'Courier New', Courier, monospace;
+      margin: 20px;
+    }
+  html {
+    box-sizing: border-box;
+  }
+  
+  p {
+    font-size: 15px;
+  }
