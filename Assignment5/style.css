@@ -1,0 +1,236 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #013C5A;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+/* I had an issue with content being too large and being cut off, I fixed that by adding a min height instead of a max height*/
+
+#mainWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#characterContainer:not(.hidden) ~ #searchSection {
+  margin-top: 40px;
+}
+
+#characterContainer:not(.hidden) {
+  margin-top: 30px;
+}
+
+#searchSection {
+  text-align: center;
+}
+
+#siteTitle {
+  font-size: 2rem; 
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px; 
+}
+  
+#searchInput {
+  padding: 12px 16px;
+  font-size: 18px;
+  width: 80%;
+  max-width: 400px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  margin-bottom: 12px;
+}
+  
+#viewAllBtn {
+  background-color: white;
+  color: #013C5A;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#viewAllBtn:hover {
+  background-color: rgb(219, 219, 219);
+}
+
+.hidden {
+  display: none;
+}
+
+  #characterContainer.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  #characterContainer {
+    max-width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  
+  .character-image-only {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  
+ .character-image-only img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  }
+  
+  .character-image-only:hover {
+    transform: scale(1.05);
+  }
+    
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 15px #000;
+    color: #013C5A;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .character-card img,
+.character-image-only img {
+  width: 150px;           
+  height: 150px;
+  object-fit: cover;   
+  border-radius: 8px;     
+  display: block;
+  margin: 0 auto;
+}
+
+.character-card.detailed {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #013C5A;
+  margin-bottom: 20px;
+  background-color: #BDD4CE;
+  border-radius: 10px;
+}
+
+.character-card.detailed img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.character-card {
+  width: 100%;
+  max-width: 350px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-10px);  
+}
+.character-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.character-info {
+  flex: 1;
+}
+
+.character-info h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.character-info blockquote {
+  margin-top: 10px;
+  font-style: italic;
+  color: #013C5A;
+}
+
+#randomCharacterBtn {
+  background-color: white;
+  color: #013C5A;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;  
+  margin: 0 auto;  
+  margin-top: 30px; 
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#randomCharacterBtn:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 600px) {
+  .character-card {
+    max-width: 90%;
+  }
+}
